@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --color-gov-navy-950: #040914;
+    --color-gov-navy-900: #071021;
+    --color-gov-navy-850: #0b172e;
+    --color-gov-navy-800: #10213f;
+    --color-gov-blue-primary: #1d4ed8;
+    --color-gov-blue-hover: #2563eb;
+    --color-gov-blue-subtle: rgba(29, 78, 216, 0.12);
+    --color-gov-border: rgba(56, 114, 224, 0.16);
+    --color-gov-border-hover: rgba(56, 114, 224, 0.32);
+    --color-gov-emergency: #dc2626;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    color-scheme: dark;
+    background-color: var(--color-gov-navy-950);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-gov-navy-950);
+    color: #e2e8f0;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom Scrollbar for Government Dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071021;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a68;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Government Dark Navy Surfaces & Panels */
+.gov-surface {
+  background-color: #0b1528;
+  border: 1px solid rgba(56, 114, 224, 0.14);
+}
+
+.gov-surface-card {
+  background: linear-gradient(180deg, rgba(14, 26, 50, 0.85) 0%, rgba(10, 19, 36, 0.95) 100%);
+  border: 1px solid rgba(56, 114, 224, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.gov-surface-card:hover {
+  border-color: rgba(56, 114, 224, 0.3);
+}
+
+.gov-surface-interactive {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gov-surface-interactive:hover {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 8px 24px -4px rgba(3, 10, 28, 0.7);
+}
+
+.gov-surface-interactive:active {
+  transform: translateY(0);
+}
+
+/* Subtle Civic Atmosphere Background Grid & Light */
+.civic-ambient-bg {
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30, 64, 175, 0.15), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 60%, rgba(14, 116, 144, 0.07), transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(15, 23, 42, 0.8), transparent 50%);
+}
+
+.civic-dot-grid {
+  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(56, 114, 224, 0.08) 1px, transparent 1px);
+}
+
+/* Subtle Animated Ambient Shimmer */
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-10px, 15px) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+.ambient-light-orb {
+  animation: ambientDrift 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-light-orb,
+  .gov-surface-interactive {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Kolkata Waterlogging Emergency & Safety",
+  "description": "Monsoon waterlogging detection, early warning, emergency SOS, safe route finder, and offline maps for Kolkata, West Bengal.",
+  "requestFramePermissions": ["geolocation", "microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
